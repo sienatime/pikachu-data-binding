@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <data>
+    <variable name="pikachu" type="net.emojiparty.databindingexample.Pikachu"/>
+  </data>
+
+  <LinearLayout
+      android:id="@+id/activity_main"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/background"
+      tools:context="net.emojiparty.databindingexample.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="24sp"
+          android:textStyle="bold"
+          android:text="@{pikachu.name}"
+          android:id="@+id/header_poke_name"/>
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/header_poke_name"
+          android:text="@{@string/genus_format(pikachu.genus)}"
+          android:textSize="12sp"
+          android:layout_marginBottom="16dp"
+          android:id="@+id/header_poke_genus"/>
+
+      <TextView
+          style="@style/pokemon_type"
+          android:layout_below="@id/header_poke_genus"
+          android:text="@{pikachu.type}"
+          android:background="@color/electric"
+          android:id="@+id/pokemon_type_1"/>
+
+      <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="16dp"
+          android:layout_alignParentRight="true"
+          android:imageResource="@{pikachu.imageResource}"
+          android:id="@+id/header_poke_image"/>
+
+    </RelativeLayout>
+  </LinearLayout>
+</layout>

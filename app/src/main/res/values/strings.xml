@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">Data Binding Example</string>
+  <string name="genus_format">%s Pokémon</string>
+  <string name="electric">Electric</string>
+</resources>
